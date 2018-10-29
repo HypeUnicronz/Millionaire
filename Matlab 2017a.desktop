@@ -1,0 +1,18 @@
+[Desktop Entry]
+X-AppInstall-Package=matlab-support
+X-AppInstall-Popcon=4
+X-AppInstall-Section=multiverse
+
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/home/software/Matlab/Install/bin/matlab -desktop
+Name=Matlab 2017a
+Icon=/home/software/Matlab/Install/Preconfig/matlab.png
+Categories=Development;Math;Science
+Comment=Scientific computing environment
+StartupNotify=true
+StartupWMClass=com-mathworks-util-PostVMInit
+
+X-Ubuntu-Gettext-Domain=app-install-data
+Path=
