@@ -112,25 +112,7 @@ switch q
     case '1'
         %Wrong Answer
         pause(5);
-        set(handles.ans_A,'BackgroundColor','[1,0,0]')
-        set(handles.ans_B,'BackgroundColor','[0,1,0]')
-        set(handles.ans_C,'BackgroundColor','[1,0,0]')
-        set(handles.ans_D,'BackgroundColor','[1,0,0]')
-        pause(2);
-        set(handles.text9,'visible','on')
-        set(handles.text9,'String','Game Over')
-        set(handles.Title,'visible','on')
-        set(handles.ans_A,'visible','off')
-        set(handles.ans_B,'visible','off')
-        set(handles.ans_C,'visible','off')
-        set(handles.ans_D,'visible','off')
-        set(handles.txtans_A,'visible','off')
-        set(handles.txtans_B,'visible','off')
-        set(handles.txtans_C,'visible','off')
-        set(handles.txtans_D,'visible','off')
-        set(handles.Questions,'visible','off')
-        set(handles.pushbutton1,'visible','on')
-        set(handles.pushbutton1,'String','Restart')
+        qWrong(hObject, eventdata, handles,'B')
     case '2'
         [q,a1,a2,a3,a4,qnum] = retr(3);
          pause(5);
@@ -978,3 +960,45 @@ switch q
         set(handles.txtans_B,'visible','off')
 end
   
+function nextQ()
+    set(handles.ans_A,'visible','on')
+    set(handles.ans_B,'visible','on')
+    set(handles.ans_C,'visible','on')
+    set(handles.ans_D,'visible','on')
+    set(handles.cntr,'String',qnum)
+    set(handles.Questions,'String',q)
+    set(handles.txtans_A,'String',a1)
+    set(handles.txtans_B,'String',a2)
+    set(handles.txtans_C,'String',a3)
+    set(handles.txtans_D,'String',a4)
+    
+function qWrong(hObject, eventdata, handles,ans)
+
+        set(handles.ans_A,'BackgroundColor','[1,0,0]')
+        set(handles.ans_B,'BackgroundColor','[1,0,0]')
+        set(handles.ans_C,'BackgroundColor','[1,0,0]')
+        set(handles.ans_D,'BackgroundColor','[1,0,0]')
+        if strcmp('A',ans)
+            set(handles.ans_A,'BackgroundColor','[0,1,0]')
+        elseif strcmp('B',ans)
+            set(handles.ans_B,'BackgroundColor','[0,1,0]')
+        end
+        pause(2);
+        set(handles.text9,'visible','on')
+        set(handles.text9,'String','Game Over')
+        set(handles.Title,'visible','on')
+        set(handles.ans_A,'visible','off')
+        set(handles.ans_B,'visible','off')
+        set(handles.ans_C,'visible','off')
+        set(handles.ans_D,'visible','off')
+        set(handles.txtans_A,'visible','off')
+        set(handles.txtans_B,'visible','off')
+        set(handles.txtans_C,'visible','off')
+        set(handles.txtans_D,'visible','off')
+        set(handles.Questions,'visible','off')
+        set(handles.pushbutton1,'visible','on')
+        set(handles.pushbutton1,'String','Restart')
+        set(handles.ans_A,'BackgroundColor','[0,0,0]')
+        set(handles.ans_B,'BackgroundColor','[0,0,0]')
+        set(handles.ans_C,'BackgroundColor','[0,0,0]')
+        set(handles.ans_D,'BackgroundColor','[0,0,0]')
